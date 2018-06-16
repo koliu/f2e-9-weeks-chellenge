@@ -1,9 +1,9 @@
-const path = require("path");
+import path from "path";
 
-module.exports = {
+export default (module = {
   entry: "./src/js/main.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist")
   }
-};
+});
