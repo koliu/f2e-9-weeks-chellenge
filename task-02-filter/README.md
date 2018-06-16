@@ -83,3 +83,34 @@ export default (module = {
 ```sh
 npm start
 ```
+
+### Install clean-webpack-plugin to remove /dist folder
+
+```sh
+npm i clean-webpack-plugin --save-dev
+```
+
+- Setup config
+
+```js
+// webpack.config
+// the path(s) that should be cleaned
+const pathsToClean = [
+  "dist", // removes 'dist' folder
+  "build/*.*" // removes all files in 'build' folder
+  // 'web/*.js'      // removes all JavaScript files in 'web' folder
+];
+
+// the clean options to use
+const cleanOptions = {
+  root: "",
+  exclude: [],
+  verbose: true,
+  dry: false
+};
+
+export default (module = {
+  //...
+  plugins: [new CleanWebpackPlugin(pathsToClean, cleanOptions)]
+});
+```
