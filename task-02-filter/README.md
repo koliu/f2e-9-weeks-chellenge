@@ -203,3 +203,43 @@ module: {
 // main.js
 import style from "../css/main.scss";
 ```
+
+### Setup webpack-dev-server
+
+- Install
+
+```sh
+npm install webpack-dev-server --save-dev
+```
+
+- Setup
+
+```json
+// package.json
+"scripts": {
+    "watch": "webpack-dev-server --mode development"
+},
+```
+
+```js
+// webpack.config.babel.js
+
+module: {
+  devServer: {
+    // Display only errors to reduce the amount of output.
+    stats: "errors-only",
+
+    // Parse host and port from env to allow customization.
+    //
+    // If you use Docker, Vagrant or Cloud9, set
+    // host: options.host || "0.0.0.0";
+    //
+    // 0.0.0.0 is available to all network devices
+    // unlike default `localhost`.
+    host: process.env.HOST, // Defaults to `localhost`
+    port: process.env.PORT || 28080, // Defaults to 8080
+    open: true // Open the page in browser,
+    overlay: true // capturing compilation related warnings and errors
+  }
+}
+```
