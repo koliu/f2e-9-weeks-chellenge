@@ -26,8 +26,42 @@ export default (module = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader" // npm install babel-loader
+      },
+      {
+        test: /(\.scss|\.css)$/,
+        // 同時使用多個 loader 來解析 css
+        // 順序：下(先用) -> 上(後用)
+        use: [
+          {
+            loader: "style-loader" // creates style nodes from JS strings
+          },
+          {
+            loader: "css-loader", // translates CSS into CommonJS
+            options: {
+              // 啟用 css modules
+              modules: false,
+              // 指定 css 的類別名稱，預設為 import { className } from "./style.css" 的 className
+              // localIdentName: '[name]__[local]--[hash:base64:5]',
+              url: false,
+              minimize: true,
+              sourceMap: true
+            }
+          },
+          {
+            loader: "postcss-loader"
+          },
+          {
+            loader: "sass-loader" // compiles Sass to CSS
+          }
+        ]
+      },
+      {
         test: /\.pug$/,
-        use: ["pug-loader"]
+        use: ["pug-loader"],
+        exclude: "/node_modules/"
       }
     ]
   },
