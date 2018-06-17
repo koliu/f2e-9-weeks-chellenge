@@ -1,5 +1,6 @@
 import path from "path";
 import CleanWebpackPlugin from "clean-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 // the path(s) that should be cleaned
 const pathsToClean = [
@@ -22,5 +23,19 @@ export default (module = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist")
   },
-  plugins: [new CleanWebpackPlugin(pathsToClean, cleanOptions)]
+  module: {
+    rules: [
+      {
+        test: /\.pug$/,
+        use: ["pug-loader"]
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.pug",
+      filename: "./index.html"
+    }),
+    new CleanWebpackPlugin(pathsToClean, cleanOptions)
+  ]
 });

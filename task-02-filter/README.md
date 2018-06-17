@@ -114,3 +114,34 @@ export default (module = {
   plugins: [new CleanWebpackPlugin(pathsToClean, cleanOptions)]
 });
 ```
+
+### Setup for pug
+
+- install:
+  - pug-loader: for webpack to resolve pug file
+  - html-webpack-plugin: to generate HTML file
+
+```sh
+npm i -D pug pug-loader html-webpack-plugin
+```
+
+- Set config
+
+```js
+// webpack.config.babel.js
+import HtmlWebpackPlugin from "html-webpack-plugin";
+
+module: {
+    rules: [{
+        test: /\.pug$/,
+        use: ['pug-loader']
+    }]
+},
+plugins: [
+  new HtmlWebpackPlugin({
+    template: "./index.pug",
+    filename: "./index.html"
+  }),
+  new CleanWebpackPlugin(pathsToClean, cleanOptions)
+]
+```
