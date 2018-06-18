@@ -243,3 +243,13 @@ module: {
   }
 }
 ```
+
+### [Setup for Vue](https://vue-loader.vuejs.org/guide/pre-processors.html)
+
+- Install
+  - [raw-loader](https://github.com/webpack-contrib/raw-loader): allows importing files as a String
+  - [pug-plain-loader](https://github.com/yyx990803/pug-plain-loader): A loader that simply compiles pug templates into HTML
+
+```sh
+npm i -D raw-loader pug-plain-loader
+```

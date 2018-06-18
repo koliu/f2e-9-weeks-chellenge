@@ -60,7 +60,18 @@ export default (module = {
       },
       {
         test: /\.pug$/,
-        use: ["pug-loader"],
+        // use: ["pug-loader"],
+        oneOf: [
+          // this applies to `<template lang="pug">` in Vue components
+          {
+            resourceQuery: /^\?vue/,
+            use: ["pug-plain-loader"]
+          },
+          // this applies to pug imports inside JavaScript
+          {
+            use: ["raw-loader", "pug-plain-loader"]
+          }
+        ],
         exclude: "/node_modules/"
       }
     ]
@@ -71,5 +82,21 @@ export default (module = {
       filename: "./index.html"
     }),
     new CleanWebpackPlugin(pathsToClean, cleanOptions)
-  ]
+  ],
+  devServer: {
+    // Display only errors to reduce the amount of output.
+    stats: "errors-only",
+
+    // Parse host and port from env to allow customization.
+    //
+    // If you use Docker, Vagrant or Cloud9, set
+    // host: options.host || "0.0.0.0";
+    //
+    // 0.0.0.0 is available to all network devices
+    // unlike default `localhost`.
+    host: process.env.HOST, // Defaults to `localhost`
+    port: process.env.PORT || 28080, // Defaults to 8080
+    // open: true // Open the page in browser,
+    overlay: true // capturing compilation related warnings and errors
+  }
 });
