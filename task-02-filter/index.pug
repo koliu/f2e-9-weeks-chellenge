@@ -5,5 +5,79 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title HaveFun
+    link(href="https://use.fontawesome.com/releases/v5.0.13/css/all.css", rel="stylesheet", integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp", crossorigin="anonymous")
+    //- script(src="./src/js/vue.js")
+    //- script(src="./src/js/axios.min.js")
   body
-    script(src="./bundle.js")
+    div#app
+      header.search-bar
+        .title
+          //- i HaveFun
+          img(src="./src/resources/logo.svg", alt="HaveFun Logo")
+        .search
+          span.icon.fas.fa-search
+          input(type="text", placeholder="Explore your own activities", @keyup.enter="addSearchKeywords", v-model="search")
+      .wrap
+        aside.conditions
+          .location
+            .caption Location
+            select(name="location")
+              option(value="1") Taiwan
+              option(value="2") a
+              option(value="3") b
+          .date
+            .caption Date
+            .from
+              label(for="date-form") form
+              input.item(id="date-form", name="date-from", type="date")
+            .to
+              label(for="date-to") to
+              input.item(id="date-to", name="date-to", type="date")
+          .categories
+            .caption Categories
+            ul.item
+              li
+                input(id="all", name="categories", type="checkbox")
+                label(for="all") All
+              li
+                input(id="entertainment", name="categories", type="checkbox")
+                label(for="entertainment") Entertainment
+              li
+                input(id="food", name="categories", type="checkbox")
+                label(for="food") Food
+              li
+                input(id="learning", name="categories", type="checkbox")
+                label(for="learning") Learning
+              li
+                input(id="outdoors", name="categories", type="checkbox")
+                label(for="outdoors") Outdoors
+        .content
+          .content-wrap
+            .search-result
+              i Showing
+              i 15
+              i results by…
+            .search-keywords
+                a(v-for="item in searchKeywords", @click.preven="removeKeyword(item)") {{item}}
+                  i.far.fa-times-circle
+            .list
+              .list-item(v-for="item in currentPageData")
+                img(:src="item.Picture1", :alt="item.Name")
+                .info
+                  i.caption {{item.Name}}
+                  i.desc {{item.Description}}
+                  .ticket-info
+                    //- i. 門票說明
+                    i.entertainment(v-show="item.Ticketinfo") {{item.Ticketinfo}}
+                  .bottom
+                    span
+                      i.icon.fas.fa-map-marker-alt
+                      i.location.text {{item.Add}}
+                    span
+                      i.icon.far.fa-calendar-alt
+                      i.open-time.text {{item.Opentime}}
+          .nav-wraper
+            nav.navigation
+              i.page(@click.prevent="currentPage = 1") <<
+              i.page(v-for="item in maxPage", :class="{ 'active' : item === currentPage }", @click.preven="currentPage = item") {{item}}
+              i.page(@click.prevent="currentPage = maxPage") >>
