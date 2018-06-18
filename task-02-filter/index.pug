@@ -65,7 +65,7 @@ html(lang="en")
                 img(:src="item.Picture1", :alt="item.Name")
                 .info
                   i.caption {{item.Name}}
-                  i.desc {{item.Description}}
+                  .desc {{item.Description}}
                   .ticket-info
                     //- i. 門票說明
                     i.entertainment(v-show="item.Ticketinfo") {{item.Ticketinfo}}

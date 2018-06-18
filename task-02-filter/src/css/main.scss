@@ -1,20 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900");
-
-/* colors */
-$color-purple: #9013fe;
-$color-purple-dark: #7828b4;
-$color-gray-lighter: #f2f2f2;
-$color-gray-light: #ebebeb;
-$color-gray: #d7d7d7;
-$color-gray-dark: #9b9b9b;
-$color-white: #ffffff;
-$color-black: #000000;
-
-@mixin ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  // white-space: nowrap;
-}
+@import "./partials/variables";
+@import "./partials/text-utils";
 
 * {
   margin: 0;
@@ -245,14 +231,17 @@ body {
             .desc {
               margin: 6px 0;
               width: 600px;
-              height: 50px;
-              @include ellipsis;
+              height: 57px;
+              line-height: 19px;
+              @include multiLineEllipsis(
+                $lineHeight: 19px,
+                $lineCount: 3,
+                $bgColor: $color-black
+              );
             }
-
             .ticket-info {
               display: inline-block;
               margin-top: 12px;
-
               .entertainment {
                 background-color: $color-gray;
                 color: $color-white;
@@ -263,18 +252,16 @@ body {
                 line-height: 19px;
               }
             }
-
             .bottom {
               font-size: 16px;
+
               color: $color-gray-dark;
               display: inline-flex;
               margin-top: 24px;
-
               .icon {
                 color: $color-black;
                 margin-right: 6px;
               }
-
               .text {
                 margin-right: 16px;
               }
@@ -283,17 +270,14 @@ body {
         }
       }
     }
-
     .nav-wraper {
       width: 100%;
       text-align: right;
-
       .navigation {
         display: inline-flex;
         border-radius: 2px;
         color: $color-purple;
         margin-top: 24px;
-
         .page {
           display: block;
           width: 41px;
@@ -302,25 +286,22 @@ body {
           text-align: center;
           border-left: 1px solid #eceeef;
           background-color: $color-white;
-
           &:hover,
           &.active {
             color: $color-white;
             background-color: $color-purple;
             cursor: pointer;
           }
-
           &.active {
             cursor: default;
           }
         }
-
         :first-child {
           border: none;
+
           border-top-left-radius: 4px;
           border-bottom-left-radius: 4px;
         }
-
         :last-child {
           border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
