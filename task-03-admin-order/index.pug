@@ -6,6 +6,47 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Shoptime
     link(href="https://use.fontawesome.com/releases/v5.0.13/css/all.css", rel="stylesheet", integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp", crossorigin="anonymous")
-  body
-    div#app
-      
+  body.black.font-16
+    #app
+      .top-bar.bg-black.gray
+        .logo.font-24.bold.white Shoptime
+        .tag
+          .home(:class="{'active':activeMenu==='home'}", @click="activeMenu = 'home'") HOME
+          .orders(:class="{'active':activeMenu==='orders'}", @click="activeMenu = 'orders'") ORDERS
+          .product(:class="{'active':activeMenu==='product'}", @click="activeMenu = 'product'") PRODUCT
+        .admin.white ADMIN
+      .container(v-if="activeMenu==='home'")
+        header
+          .caption.font-24.bold OVERVIEW
+          .duration
+            i 2018/6/6
+            i.fas.fa-caret-right.black
+            i 2018/6/13
+            i
+            i Weekly
+            i.fas.fa-caret-down.black
+        .summary
+          .summary-item.radius.bg-white
+            .top
+              i.fas.fa-hand-holding-usd
+              i TOTAL REVENUE
+            .bottom
+              i.green.font-36 {{totalRevenue | formatCurrency}}
+          .summary-item.radius.bg-white
+            .top
+              i.fas.fa-boxes
+              i TOTAL COST
+            .bottom
+              i.red.font-36 {{totalCost | formatCurrency}}
+          .summary-item.radius.bg-white
+            .top
+              i.fas.fa-money-bill
+              i NET INCOME
+            .bottom
+              i.blue.font-36 {{(totalRevenue - totalCost) | formatCurrency}}
+        .trends.radius.bg-white
+        .statistics
+          .transition-sites.radius.bg-white
+          .latest-orders.radius.bg-white
+          
+        
