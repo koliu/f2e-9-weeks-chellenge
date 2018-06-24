@@ -68,7 +68,7 @@ body {
 .container {
   animation: fade 1.5s 0.1s forwards;
   box-sizing: border-box;
-  padding: 0.8% 4.1%;
+  padding: 0.8% 4.1% 2% 3.4%;
   opacity: 0;
 
   header {
@@ -120,10 +120,116 @@ body {
 
   .trends {
     margin-top: 1.5%;
+    height: 406px;
+    padding: 3.4% 2.4%;
 
-    #home-trends {
-      width: 80%;
-      height: 80%;
+    .labelString {
+      padding-left: 2.3%;
+      padding-bottom: 2.3%;
+    }
+  }
+
+  .statistics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.6%;
+
+    .transition-sites,
+    .latest-orders {
+      height: 456px;
+      padding: 2.4% 3.9%;
+      width: 40.9%;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+    }
+
+    .transition-sites {
+      .item {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 6%;
+        padding-bottom: 6%;
+        border-bottom: 1px solid $color-gray-light;
+
+        img {
+          height: 45px;
+          width: 45px;
+        }
+
+        & :nth-child(2) {
+          width: 52%;
+        }
+
+        & :nth-child(3) {
+          text-align: right;
+          width: 15%;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .latest-orders {
+
+      .item {
+        align-items: center;
+        border-bottom: 1px solid $color-gray-light;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-top: 3%;
+        padding-bottom: 3%;
+
+        img {
+          height: 100px;
+          width: 100px;
+        }
+
+        .info {
+          width: calc(95% - 100px);
+
+          :nth-child(n+2) {
+            align-items: center;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding-top: 1.2%;
+
+            .left {
+              display: block;
+              width: 80%;
+
+              :nth-child(n) {
+                display: inline-block;
+                vertical-align: middle;
+              }
+
+              :first-child {
+                padding-right: 5px;
+                text-align: center;
+                width: 12px;
+              }
+            }
+
+            .right {
+              display: block;
+              text-align: right;
+              width: 20%;
+            }
+          }
+        }
+
+        &:last-child {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+      }
     }
   }
 }

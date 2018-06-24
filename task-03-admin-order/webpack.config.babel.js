@@ -1,6 +1,8 @@
 import path from "path";
 import CleanWebpackPlugin from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import VueLoaderPlugin from "vue-loader/lib/plugin";
+import webpack from "webpack";
 
 // the path(s) that should be cleaned
 const pathsToClean = [
@@ -25,6 +27,10 @@ export default (module = {
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: "vue-loader"
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -81,7 +87,13 @@ export default (module = {
       template: "./index.pug",
       filename: "./index.html"
     }),
-    new CleanWebpackPlugin(pathsToClean, cleanOptions)
+    new CleanWebpackPlugin(pathsToClean, cleanOptions),
+    new VueLoaderPlugin(),
+
+    // for installed from npm
+    // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+    // for built-in moment.js
+    new webpack.IgnorePlugin(/^\.\/locale$/, /js$/)
   ],
   devServer: {
     // Display only errors to reduce the amount of output.

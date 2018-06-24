@@ -28,26 +28,100 @@ html(lang="en")
         .summary
           .summary-item.radius.bg-white
             .top
-              i.fas.fa-hand-holding-usd
+              i.fas.fa-hand-holding-usd.font-28
               i TOTAL REVENUE
             .bottom
               i.green.font-36 {{totalRevenue | formatCurrency}}
           .summary-item.radius.bg-white
             .top
-              i.fas.fa-boxes
+              i.fas.fa-boxes.font-28
               i TOTAL COST
             .bottom
               i.red.font-36 {{totalCost | formatCurrency}}
           .summary-item.radius.bg-white
             .top
-              i.fas.fa-money-bill
+              i.fas.fa-money-bill.font-28
               i NET INCOME
             .bottom
               i.blue.font-36 {{(totalRevenue - totalCost) | formatCurrency}}
         .trends.radius.bg-white
-          canvas#home-trends
+          .labelString.font-24.bold ACTIVITY
+          chart-component
         .statistics
           .transition-sites.radius.bg-white
+            .font-24.bold Transaction Website
+            .item
+              img(src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDkwIDkwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA5MCA5MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxwYXRoIGlkPSJGYWNlYm9va19feDI4X2FsdF94MjlfIiBkPSJNOTAsMTUuMDAxQzkwLDcuMTE5LDgyLjg4NCwwLDc1LDBIMTVDNy4xMTYsMCwwLDcuMTE5LDAsMTUuMDAxdjU5Ljk5OCAgIEMwLDgyLjg4MSw3LjExNiw5MCwxNS4wMDEsOTBINDVWNTZIMzRWNDFoMTF2LTUuODQ0QzQ1LDI1LjA3Nyw1Mi41NjgsMTYsNjEuODc1LDE2SDc0djE1SDYxLjg3NUM2MC41NDgsMzEsNTksMzIuNjExLDU5LDM1LjAyNFY0MSAgIGgxNXYxNUg1OXYzNGgxNmM3Ljg4NCwwLDE1LTcuMTE5LDE1LTE1LjAwMVYxNS4wMDF6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==")
+              .url.gray-dark facebook.com
+              .income.font-20 {{45836 | formatCurrency }}
+              .ratio.green
+                i.fas.fa-arrow-up.pr-5.font-20
+                i 20%
+            .item
+              img(src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDkwIDkwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA5MCA5MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxwYXRoIGlkPSJZb3VUdWJlIiBkPSJNNzAuOTM5LDY1LjgzMkg2NmwwLjAyMy0yLjg2OWMwLTEuMjc1LDEuMDQ3LTIuMzE4LDIuMzI2LTIuMzE4aDAuMzE1YzEuMjgyLDAsMi4zMzIsMS4wNDMsMi4zMzIsMi4zMTggICBMNzAuOTM5LDY1LjgzMnogTTUyLjQxMyw1OS42ODRjLTEuMjUzLDAtMi4yNzgsMC44NDItMi4yNzgsMS44NzNWNzUuNTFjMCwxLjAyOSwxLjAyNSwxLjg2OSwyLjI3OCwxLjg2OSAgIGMxLjI1OCwwLDIuMjg0LTAuODQsMi4yODQtMS44NjlWNjEuNTU3QzU0LjY5Nyw2MC41MjUsNTMuNjcxLDU5LjY4NCw1Mi40MTMsNTkuNjg0eiBNODIuNSw1MS44Nzl2MjYuNTQ0ICAgQzgyLjUsODQuNzksNzYuOTc5LDkwLDcwLjIzLDkwSDE5Ljc3MUMxMy4wMiw5MCw3LjUsODQuNzksNy41LDc4LjQyM1Y1MS44NzljMC02LjM2Nyw1LjUyLTExLjU3OCwxMi4yNzEtMTEuNTc4SDcwLjIzICAgQzc2Ljk3OSw0MC4zMDEsODIuNSw0NS41MTIsODIuNSw1MS44Nzl6IE0yMy4xMzcsODEuMzA1bC0wLjAwNC0yNy45NjFsNi4yNTUsMC4wMDJ2LTQuMTQzbC0xNi42NzQtMC4wMjV2NC4wNzNsNS4yMDUsMC4wMTV2MjguMDM5ICAgSDIzLjEzN3ogTTQxLjg4Nyw1Ny41MDloLTUuMjE1djE0LjkzMWMwLDIuMTYsMC4xMzEsMy4yNC0wLjAwOCwzLjYyMWMtMC40MjQsMS4xNTgtMi4zMywyLjM4OC0zLjA3MywwLjEyNSAgIGMtMC4xMjYtMC4zOTYtMC4wMTUtMS41OTEtMC4wMTctMy42NDNsLTAuMDIxLTE1LjAzNGgtNS4xODZsMC4wMTYsMTQuNzk4YzAuMDA0LDIuMjY4LTAuMDUxLDMuOTU5LDAuMDE4LDQuNzI5ICAgYzAuMTI3LDEuMzU3LDAuMDgyLDIuOTM5LDEuMzQxLDMuODQzYzIuMzQ2LDEuNjksNi44NDMtMC4yNTIsNy45NjgtMi42NjhsLTAuMDEsMy4wODNsNC4xODgsMC4wMDVMNDEuODg3LDU3LjUwOUw0MS44ODcsNTcuNTA5eiAgICBNNTguNTcsNzQuNjA3TDU4LjU1OSw2Mi4xOGMtMC4wMDQtNC43MzYtMy41NDctNy41NzItOC4zNTYtMy43NGwwLjAyMS05LjIzOWwtNS4yMDksMC4wMDhsLTAuMDI1LDMxLjg5bDQuMjg0LTAuMDYybDAuMzktMS45ODYgICBDNTUuMTM3LDg0LjA3Miw1OC41NzgsODAuNjMxLDU4LjU3LDc0LjYwN3ogTTc0Ljg5MSw3Mi45NmwtMy45MSwwLjAyMWMtMC4wMDIsMC4xNTUtMC4wMDgsMC4zMzQtMC4wMSwwLjUyOXYyLjE4MiAgIGMwLDEuMTY4LTAuOTY1LDIuMTE5LTIuMTM3LDIuMTE5aC0wLjc2NmMtMS4xNzQsMC0yLjEzOS0wLjk1MS0yLjEzOS0yLjExOVY3NS40NXYtMi40di0zLjA5N2g4Ljk1NHYtMy4zNyAgIGMwLTIuNDYzLTAuMDYzLTQuOTI1LTAuMjY3LTYuMzMzYy0wLjY0MS00LjQ1NC02Ljg5My01LjE2MS0xMC4wNTEtMi44ODFjLTAuOTkxLDAuNzEyLTEuNzQ4LDEuNjY1LTIuMTg4LDIuOTQ1ICAgYy0wLjQ0NCwxLjI4MS0wLjY2NSwzLjAzMS0wLjY2NSw1LjI1NHY3LjQxQzYxLjcxNCw4NS4yOTYsNzYuNjc2LDgzLjU1NSw3NC44OTEsNzIuOTZ6IE01NC44MzMsMzIuNzMyICAgYzAuMjY5LDAuNjU0LDAuNjg3LDEuMTg0LDEuMjU0LDEuNTg0YzAuNTYsMC4zOTQsMS4yNzYsMC41OTIsMi4xMzQsMC41OTJjMC43NTIsMCwxLjQxOC0wLjIwMywxLjk5OC0wLjYyMiAgIGMwLjU3OC0wLjQxNywxLjA2NS0xLjA0LDEuNDYzLTEuODcxbC0wLjA5OSwyLjA0Nmg1LjgxM1Y5Ljc0SDYyLjgydjE5LjI0YzAsMS4wNDItMC44NTgsMS44OTUtMS45MDcsMS44OTUgICBjLTEuMDQzLDAtMS45MDQtMC44NTMtMS45MDQtMS44OTVWOS43NGgtNC43NzZ2MTYuNjc0YzAsMi4xMjQsMC4wMzksMy41NCwwLjEwMiw0LjI1OEM1NC40LDMxLjM4NSw1NC41NjQsMzIuMDY5LDU0LjgzMywzMi43MzJ6ICAgIE0zNy4yMTcsMTguNzdjMC0yLjM3MywwLjE5OC00LjIyNiwwLjU5MS01LjU2MmMwLjM5Ni0xLjMzMSwxLjEwNy0yLjQwMSwyLjEzNy0zLjIwOGMxLjAyNy0wLjgxMSwyLjM0Mi0xLjIxNywzLjk0MS0xLjIxNyAgIGMxLjM0NSwwLDIuNDk3LDAuMjY0LDMuNDU5LDAuNzgxYzAuOTY3LDAuNTIsMS43MTMsMS4xOTUsMi4yMywyLjAyOGMwLjUyNywwLjgzNiwwLjg4NSwxLjY5NSwxLjA3NiwyLjU3NCAgIGMwLjE5NSwwLjg5MSwwLjI5MSwyLjIzNSwwLjI5MSw0LjA0OHY2LjI1MmMwLDIuMjkzLTAuMDkyLDMuOTgtMC4yNzEsNS4wNTFjLTAuMTc3LDEuMDc0LTAuNTU3LDIuMDctMS4xNDYsMy4wMDQgICBjLTAuNTgsMC45MjQtMS4zMjksMS42MTUtMi4yMzcsMi4wNTZjLTAuOTE4LDAuNDQ1LTEuOTY4LDAuNjYzLTMuMTU0LDAuNjYzYy0xLjMyNSwwLTIuNDQxLTAuMTgzLTMuMzYxLTAuNTY1ICAgYy0wLjkyMy0wLjM4LTEuNjM2LTAuOTUzLTIuMTQ0LTEuNzE0Yy0wLjUxMy0wLjc2Mi0wLjg3NC0xLjY5LTEuMDkyLTIuNzcyYy0wLjIxOS0xLjA4MS0wLjMyMy0yLjcwNy0wLjMyMy00Ljg3NEwzNy4yMTcsMTguNzcgICBMMzcuMjE3LDE4Ljc3eiBNNDEuNzcsMjguNTljMCwxLjQsMS4wNDIsMi41NDMsMi4zMTEsMi41NDNjMS4yNywwLDIuMzA4LTEuMTQzLDIuMzA4LTIuNTQzVjE1LjQzYzAtMS4zOTgtMS4wMzgtMi41NDEtMi4zMDgtMi41NDEgICBjLTEuMjY5LDAtMi4zMTEsMS4xNDMtMi4zMTEsMi41NDFWMjguNTl6IE0yNS42ODIsMzUuMjM1aDUuNDg0bDAuMDA2LTE4Ljk2bDYuNDgtMTYuMjQyaC01Ljk5OGwtMy40NDUsMTIuMDY0TDI0LjcxNSwwaC01LjkzNiAgIGw2Ljg5NCwxNi4yODRMMjUuNjgyLDM1LjIzNXoiIGZpbGw9IiMwMDAwMDAiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K")
+              .url.gray-dark youtube.com
+              .income.font-20 {{23582 | formatCurrency }}
+              .ratio.green
+                i.fas.fa-arrow-up.pr-5.font-20
+                i 12%
+            .item
+              img(src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDQzMC4xMTcgNDMwLjExNyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDMwLjExNyA0MzAuMTE3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggaWQ9ImVCYXkiIGQ9Ik0zODYuMTA3LDEyMS44NjZsLTMzLjUxLDcyLjA0MWwtMzEuMDA4LTcyLjA0MWgtNDcuNTEybDgsMTYuMTJjLTQuNDk0LTAuNTAyLTkuNTAyLTEuMDA4LTE1LjAxLTEuMDA4ICAgYy0xMi40OTgsMC0yMy41MDgsMi4wMTYtMzAuOTk4LDguMDY3Yy04LjAwOSw1LjAzNi0xMi41MDgsMTQuNjA1LTEyLjUwOCwyOS4yMThoMzMuMDA1YzAtOS41NzIsMC41MDUtMTguNjM4LDEyLjUwOC0xOC42MzggICBjMTIuMDA0LDAsMTMuNTAyLDcuNTU2LDEzLjUwMiwxNy42M3Y5LjU2OGMtMTkuMDA5LTAuNTA3LTM3LjUwOSwwLTQ5LjAxNCw5LjA2MWMtNS4wMDMtNS4wMzEtMTEuNTA5LTguMDU4LTIxLjUwNi04LjA1OCAgIGMtMTIuMDA2LDAtMjAuMDEsMy41MzMtMjcuMDA2LDEzLjYwM2gtMC41MDJ2LTYyLjk2NmgtMzMuMDA1djU2LjkxOWMtNC45OTktMi41MTgtMTEuMDA1LTQuMDIzLTE4LjAwMy01LjU0NCAgIGMtMTEuNTA2LTIuNTE4LTI2LjUxNC00LjAyMy00NS41MTYtNC4wMjNDOC41MDEsMTgxLjgxNSwwLDIwNi40OTQsMCwyMzUuMjExYzAsMzMuMjQ4LDEwLjAwOCw1Ni40MjUsODguMDIxLDU2LjQyNSAgIGMxOC4wMDgsMCwzMy41MTctMi4wMjUsNDYuMDEzLTQuNTQ2YzYuNDk5LTEuNTA3LDEyLjUwOC0zLjUyMywxNy41MDYtNi4wNDh2MjQuNjk4aDMxLjUxNHYtMTMuMTA1aDAuNDk3ICAgYzYuMDA2LDExLjU4OCwxNS4wMDQsMTUuNjE2LDI4LjAwNSwxNS42MTZjMjcuNTEsMCwzMi4wMDQtMjQuNjg1LDMzLjAxMi00Ni44NDljMi40OTcsMC41MDQsNC45OTksMC41MDQsOC4wMDQsMC41MDQgICBjMTQuNDk2LDAsMjQuMDAzLTYuMDQ4LDMxLjAwNC0xOC4xMzFoMC40OTlsMS40OTgsMTYuMTJoMzEuMDE4Yy0wLjQ5OS03LjU1Ny0xLjQ5OC0xNS4xMTItMS40OTgtMjIuNjY5di0zMS43MzVsMTMuNDkzLDI3LjcwOCAgIHY1OC45MzZoNDMuNTExdi01OC45MzZsNTguMDIxLTExMS4zMzNIMzg2LjEwN3ogTTg4LjAyMSwxOTkuOTQ2YzI5LjAwOCwwLDI4LjAwOSwxNC42MTcsMjguMDA5LDI0LjY4OEg2MS4wMTUgICBDNjEuMDE1LDIxNi4wNzEsNjAuNTE4LDE5OS45NDYsODguMDIxLDE5OS45NDZ6IE0xMzQuMDM0LDI1My4zNDhoLTAuNDk3aC0xOS41MDhjMCw5LjA2Mi00LjUwMSwxOS4xMzUtMjYuMDA3LDE5LjEzNSAgIGMtMjYuNSwwLTI3LjAwNi0xOC42MzYtMjcuMDA2LTMxLjIzMmg5MC41MjV2MTIuMDkzaC0xNy41MDZWMjUzLjM0OHogTTIxMi4wNTgsMjQ0Ljc4M2MwLDMwLjIyNC0xLjk5Nyw0Mi44Mi0xNC4wMDMsNDIuODIgICBjLTExLjUwNiwwLTEzLjUwOS0xMi41OTctMTMuNTA5LTQyLjgyYzAtMjMuNjc2LDAtNDAuMywxMy41MDktNDAuM0MyMTIuNTYsMjA0LjQ4MywyMTIuMDU4LDIyMS4xMDcsMjEyLjA1OCwyNDQuNzgzeiAgICBNMjY2LjA3LDI0MS4yNWMtMTEuMDAxLDAtMTIuNDk5LTEwLjU3NS0xMi40OTktMTkuMTM1YzAtMjEuMTY2LDEyLjQ5OS0xOS42NDgsMjkuMDA2LTIwLjY1OSAgIEMyODIuNTc3LDIxNC41NjMsMjg1LjU3MywyNDEuMjUsMjY2LjA3LDI0MS4yNXoiIGZpbGw9IiMwMDAwMDAiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K")
+              .url.gray-dark ebay.com
+              .income.font-20 {{2489 | formatCurrency }}
+              .ratio.red
+                i.fas.fa-arrow-down.pr-5.font-20
+                i 15%
+            .item
+              img(src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDkwLjE5NSA5MC4xOTUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDkwLjE5NSA5MC4xOTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBpZD0iV29yZFByZXNzX194MjhfYWx0X3gyOV8iIGQ9Ik01LjE4MiwyMy4xNTRDMTIuNjg4LDkuMTU0LDI3Ljc0LDAsNDUuMDk4LDBDNTYuMzM0LDAsNjYuNiw0Ljc4OCw3NC40ODQsMTEuNTQ2ICAgYy0yLjI1My0wLjQzNi00LjcxMywwLjA1NC03LjE4OSwxLjQ3MWMtNS44MDEsMy4zMjYtNy42OTYsMTIuNzQtMC4xNzYsMTcuNDY4YzQuNjk2LDIuOTM1LDYuMzY3LDEwLjI4Myw2LjIwOSwxNC43NzEgICBjLTAuMTU0LDQuNDk1LTEwLjkxNiwyNS4xMzktMTAuOTE2LDI1LjEzOUw1MS45MzQsMzQuNDE0YzAsMC0wLjM2MS0yLjUyNC0wLjM2MS0zLjI1MmMwLTAuOTE4LDAuMzAzLTIuMDQyLDAuODY5LTIuNjg0ICAgYzAuMzkxLTAuNDI3LDAuOTg2LTEuMzI0LDEuNjktMS4zMjRoNC45NjZ2LTRoLTI3djRoMC44MzdjMC44ODQsMCwxLjc0OSwxLjE4OSwyLjU4MywyLjA0M2MwLjk4NiwxLjAxOCwyLjIyNyw0Ljg0OCwzLjczLDguODIxICAgbDMuOTI2LDEyLjkzM2wtOC40NjEsMTkuNTUyTDI1LjQzLDMxLjQyNmMwLDAsMC4yNzQtMi42NzgsMC44MzUtMy4xMzNjMC4zNjYtMC4zMTMsMC45MjgtMS4xMzksMS41NzgtMS4xMzloMC4yNTV2LTRINS4xODJ6ICAgIE0xMC40NzUsMjkuOTQ1YzAsMC0yLjE4NC0yLjc5MS00LjUwMi0yLjc5MUgzLjYyMWMtMi4yNjksNS0zLjUyMywxMS43MTUtMy41MjMsMTcuODdjMCwxOC41MTQsMTEuMzU0LDM0LjM5MywyNy41MjksNDEuMTU5ICAgTDEwLjQ3NSwyOS45NDV6IE04My44MjIsMjIuNzk4YzAuODU1LDQuMDU3LDAuNjc4LDguOTc5LTAuOTksMTQuMzkzYy00LjM1MSwxNC4wODYtMTUuMTIxLDM5LjQyOC0xOS4yOTEsNDkuMDgxICAgYzE1LjY1Mi02Ljk4OCwyNi41NTctMjIuNTkxLDI2LjU1Ny00MC43MjlDOTAuMDk4LDM3LjIzNSw4Ny44MDQsMjkuNDYsODMuODIyLDIyLjc5OHogTTQ2LjAwNyw2MC44MzVMMzQuNTAxLDg4LjkzOCAgIGMzLjM5OCwwLjgxNCw2Ljk0NCwxLjI1OCwxMC41OTYsMS4yNThjMy43ODEsMCw3LjQ0OS0wLjQ2OSwxMC45NTctMS4zNEw0Ni4wMDcsNjAuODM1eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=")
+              .url.gray-dark wordpress.com
+              .income.font-20 {{1057 | formatCurrency }}
+              .ratio.red
+                i.fas.fa-arrow-down.pr-5.font-20
+                i 30%
           .latest-orders.radius.bg-white
+            .font-24.bold Latest Orders
+            .item
+              img(src="http://img1.jurko.net/avatar_15063.jpg", alt="Vintage T-shirt")
+              .info
+                .font-20.bold Vintage T-shirt
+                .middle
+                  i.left
+                    i.fas.fa-clock.gray-dark.font-10
+                    i.gray-dark 2018/6/13 13:42
+                  i.right.font-14 Total
+                .bottom
+                  i.left
+                    i.fas.fa-male.gray-dark
+                    i.gray-dark Belle Willis
+                  i.right.font-20.bold {{3200 | formatCurrency}}
+            .item
+              img(src="http://img1.jurko.net/avatar_16227.jpg", alt="Cowboy Jacket")
+              .info
+                .font-20.bold Cowboy Jacket
+                .middle
+                  i.left
+                    i.fas.fa-clock.gray-dark.font-10
+                    i.gray-dark 2018/6/13 10:45
+                  i.right.font-14 Total
+                .bottom
+                  i.left
+                    i.fas.fa-male.gray-dark
+                    i.gray-dark Adrian Cummings
+                  i.right.font-20.bold {{2800 | formatCurrency}}
+            .item
+              img(src="http://img1.jurko.net/avatar_5250.gif", alt="Coach Coat")
+              .info
+                .font-20.bold Coach Coat
+                .middle
+                  i.left
+                    i.fas.fa-clock.gray-dark.font-10
+                    i.gray-dark 2018/6/13  8:26
+                  i.right.font-14 Total
+                .bottom
+                  i.left
+                    i.fas.fa-male.gray-dark
+                    i.gray-dark Lura Holland
+                  i.right.font-20.bold {{1600 | formatCurrency}}
           
         
+

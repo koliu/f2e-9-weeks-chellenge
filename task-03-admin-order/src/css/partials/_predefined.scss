@@ -21,6 +21,9 @@
 .gray {
   color: $color-gray;
 }
+.gray-dark {
+  color: $color-gray-dark;
+}
 .green {
   color: $color-green;
 }
@@ -35,12 +38,29 @@
 .bold {
   font-weight: bold;
 }
+.font-10 {
+  font-size: 10px;
+}
+.font-14 {
+  font-size: 14px;
+}
 .font-16 {
   font-size: 16px;
+}
+.font-20 {
+  font-size: 20px;
 }
 .font-24 {
   font-size: 24px;
 }
+.font-28 {
+  font-size: 28px;
+}
 .font-36 {
   font-size: 36px;
+}
+
+/* padding classes */
+.pr-5 {
+  padding-right: 5px;
 }
